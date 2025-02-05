@@ -1,0 +1,52 @@
+.bug-list {
+  padding: 15px 0 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 1200px;
+  height: 500px;
+  border-radius: 5px;
+  overflow-y: auto; /* Add this line to make the list scrollable */
+  border-left: 2.5px solid rgb(66, 83, 23);
+  border-right: 2.5px solid rgb(66, 83, 23);
+  border-top: 6px solid rgb(66, 83, 23);
+  border-bottom: 6px solid rgb(66, 83, 23);
+}
+
+.bug-list li {
+  display: flex;
+  align-items: center;
+  background-color: var(--clr1bg);
+  width: 96%;
+  margin-left: 12px;
+  border-radius: 5px;
+  padding: 0.3rem;
+}
+
+
+.add-edit{
+    background-color: rgb(204, 196, 99);
+    position: absolute;
+    top: 250px;
+    left: 650px;
+    padding: 15px;
+    padding-right: 36px;
+    padding-left: 36px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.add-edit > form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+.add-edit > form input{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(45, 43, 43);
+    text-align: center;
+}

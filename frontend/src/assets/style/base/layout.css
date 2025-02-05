@@ -1,0 +1,28 @@
+.main-layout {
+    display: grid;
+    grid-template-rows: 1.6rem 1fr 1.6rem;
+}
+
+.main-layout > main{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+.main-layout > main > button{
+    margin-top: 20px;
+    height: 60px;
+}
+
+.main-layout .full {
+    grid-column: 1/-1;
+}
+
+.container {
+    max-width: 800px;
+    padding: 1em;
+    margin: auto;
+}
+
+.main-layout > h3{
+    justify-self: center;
+}
