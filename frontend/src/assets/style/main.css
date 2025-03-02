@@ -1,20 +1,21 @@
 /* Setup */
 
-@import "setup/vars.css";
-@import "setup/typography.css";
+@import "setup/vars.scss";
+@import "setup/typography.scss";
 
 /* Base */
 
-@import "base/base.css";
-@import "base/helpers.css";
-@import "base/layout.css";
-@import "base/forms.css";
+@import "base/base.scss";
+@import "base/helpers.scss";
+@import "base/layout.scss";
+@import "base/forms.scss";
 
 /* Components */
 
-@import "cmps/AppHeader.css";
-@import "cmps/Home.css";
-@import "cmps/UserMsg.css";
-@import "cmps/BugList.css";
-@import "cmps/BugPreview.css";
-@import "cmps/BugDetails.css";
+@import "cmps/AppHeader.scss";
+@import "cmps/Home.scss";
+@import "cmps/UserMsg.scss";
+@import "cmps/BugList.scss";
+@import "cmps/BugPreview.scss";
+@import "cmps/BugDetails.scss";
+@import "cmps/LogUser.scss";

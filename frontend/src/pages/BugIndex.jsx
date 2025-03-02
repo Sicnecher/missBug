@@ -3,13 +3,15 @@ import { showSuccessMsg, showErrorMsg } from "../services/event-bus.service.js";
 import { BugList } from "../cmps/BugList.jsx";
 import { useState } from "react";
 import { useEffect } from "react";
-import { addBug, editBug, loadBugs, removeBug } from "../store/action.js";
+import { addBug, editBug, loadBugs, removeBug } from "../store/bug/action.js";
 import { useSelector } from "react-redux";
 import { AddEditCmp } from "../cmps/AddEditCmp.jsx";
+import { useDispatch } from "react-redux";
 
 export function BugIndex() {
-  const bugs = useSelector((state) => state.mainModule.bugs);
-  const [toggle, setToggle] = useState({ type: "", bug: null });
+  const dispatch = useDispatch();
+  const bugs = useSelector((state) => state.bugModule.bugs);
+  const [addEditToggle, setAddEditToggle] = useState({ type: "", bug: null });
 
   useEffect(() => {
     onLoadBugs();
@@ -36,7 +38,7 @@ export function BugIndex() {
     };
     try {
       await addBug(bug);
-      setToggle({ type: "", bug: null });
+      setAddEditToggle({ type: "", bug: null });
       showSuccessMsg("Bug added");
     } catch (err) {
       console.log("Error from onAddBug ->", err);
@@ -47,7 +49,7 @@ export function BugIndex() {
   async function onEditBug(bugToSave) {
     try {
       await editBug(bugToSave);
-      setToggle({ type: "", bug: null });
+      setAddEditToggle({ type: "", bug: null });
       showSuccessMsg("Bug updated");
     } catch (err) {
       console.log("Error from onEditBug ->", err);
@@ -55,7 +57,7 @@ export function BugIndex() {
     }
   }
 
-  const handleToggle = (type, bug) => setToggle({ type, bug });
+  const handleToggle = (type, bug) => setAddEditToggle({ type, bug });
 
   return bugs && bugs[0] ? (
     <main className="main-layout">
@@ -68,12 +70,12 @@ export function BugIndex() {
           onToggle={handleToggle}
         />
       </main>
-      {toggle.type.length > 0 && (
+      {addEditToggle.type.length > 0 && (
         <AddEditCmp
-          type={toggle.type}
+          type={addEditToggle.type}
           onEditBug={onEditBug}
           onAddBug={onAddBug}
-          bug={toggle.bug}
+          bug={addEditToggle.bug}
           onCloseWindow={() => handleToggle("", null)}
         />
       )}

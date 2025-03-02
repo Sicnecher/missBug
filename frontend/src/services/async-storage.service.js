@@ -4,6 +4,7 @@ export const storageService = {
     post,
     put,
     remove,
+    _save
 }
 
 function query(entityType, delay = 500) {
@@ -11,9 +12,10 @@ function query(entityType, delay = 500) {
     return new Promise(resolve => setTimeout(() => resolve(entities), delay))
 }
 
-function get(entityType, entityId) {
+function get(entityType, entityId = "") {
     return query(entityType).then(entities => {
-        const entity = entities.find(entity => entity._id === entityId)
+        console.log(entities)
+        const entity = Array.isArray(entities) ? entities.find(entity => entity._id === entityId) : entities
         if (!entity) throw new Error(`Get failed, cannot find entity with id: ${entityId} in: ${entityType}`)
         return entity
     })

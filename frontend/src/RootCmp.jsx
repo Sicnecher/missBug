@@ -6,8 +6,13 @@ import { AboutUs } from "./pages/AboutUs.jsx";
 import { Route, HashRouter as Router, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store/store.js";
+import { useEffect } from "react";
+import { loadUser } from "./store/user/action.js";
 
 export function App() {
+  useEffect(() => {
+    loadUser();
+  }, []);
   return (
     <Provider store={store}>
       <Router>

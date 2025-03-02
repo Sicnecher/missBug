@@ -1,6 +1,6 @@
-import { bugService } from '../services/bug.service'
+import { bugService } from '../../services/bug.service'
 
-import { store } from './store'
+import { store } from '../store'
 
 import {
   SET_BUGS,
@@ -9,7 +9,7 @@ import {
   EDIT_BUG,
   SET_FILTER,
 } from './reducer'
-import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
+import { showErrorMsg, showSuccessMsg } from '../../services/event-bus.service'
 
 export async function loadBugs(filter = {}) {
   try {

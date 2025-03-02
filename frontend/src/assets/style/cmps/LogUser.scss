@@ -1,0 +1,33 @@
+.log-user{
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    background-color: #9a7979;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    & div{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        form{
+            display: flex;
+            flex-direction: column;
+            input{
+                margin: 10px;
+                padding: 5px;
+                border-radius: 5px;
+                border: none;
+            }
+            button{
+                margin: 10px;
+                padding: 5px;
+                border-radius: 5px;
+                border: none;
+                background-color: #f0f0f0;
+                cursor: pointer;
+            }
+        }
+    }
+}
